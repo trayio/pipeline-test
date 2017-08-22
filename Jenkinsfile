@@ -12,6 +12,8 @@ pipeline {
 
       steps {
         checkout scm
+
+        sh 'sbt --version'
       }
     }
   }
