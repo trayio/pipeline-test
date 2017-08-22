@@ -1,19 +1,12 @@
+@Library('credentials') import jobs.common.Credentials
+
 pipeline {
   agent any
 
   stages {
     stage('build') {
-      agent {
-        docker {
-          image 'tray/sbt:v3'
-        }
-      }
-
-      steps {
-        checkout scm
-
-        sh 'sbt --version'
-      }
+      script {
+        sh 'hello'
     }
   }
 }
