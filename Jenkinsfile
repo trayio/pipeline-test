@@ -1,13 +1,15 @@
 @Library('Credentials')
 import io.tray.Credentials
 
+def x = Credentials.GitHub()
+
 pipeline {
   agent any
 
   stages {
     stage('build') {
-      script {
-        sh 'hello'
+      steps {
+        sh "${x}"
       }
     }
   }
