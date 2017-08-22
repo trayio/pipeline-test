@@ -1,4 +1,5 @@
-@Library('credentials') import jobs.common.Credentials
+@Library('Credentials')
+import io.tray.Credentials
 
 pipeline {
   agent any
