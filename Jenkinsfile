@@ -5,7 +5,6 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          label 'office'
           image 'tray/sbt:v3'
         }
       }
