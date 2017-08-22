@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'office' }
+  agent any
 
   stages {
     stage('build') {
