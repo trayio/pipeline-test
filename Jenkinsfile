@@ -18,7 +18,7 @@ pipeline {
       }
       
       steps {
-        sh "echo ${DOCKER_REGISTRY}"
+        sh "echo \'${DOCKER_REGISTRY}\'"
       }
     }
   }
