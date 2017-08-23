@@ -14,12 +14,11 @@ pipeline {
   stages {
     stage('build') {
       environment {
-        NPM_TOKEN = credentials('8c59cc7c-077b-4115-a136-e5b64142345a')
-        SECRET_TEXT = credentials('SECRET_TEST')
+        DOCKER_REGISTRY = credentials('cdda9cef-e64f-48e5-94ef-fe7ac34c2159')
       }
       
       steps {
-        sh 'echo ${NPM_TOKEN}'
+        sh 'echo ${DOCKER_REGISTRY}'
       }
     }
   }
