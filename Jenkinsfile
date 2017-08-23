@@ -8,8 +8,14 @@ pipeline {
 
   stages {
     stage('build') {
+      environment {
+        DOCKER_REGISTRY = credentials('Docker Hub')
+      }
+      
       steps {
-        sh "${x}"
+        sh "echo ${DOCKER_REGISTRY}"
+        sh "echo ${DOCKER_REGISTRY_USR}"
+        sh "echo ${DOCKER_REGISTRY_PSW}"
       }
     }
   }
