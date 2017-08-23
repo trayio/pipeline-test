@@ -9,13 +9,11 @@ pipeline {
   stages {
     stage('build') {
       environment {
-        DOCKER_REGISTRY = credentials('Docker Hub')
+        DOCKER_REGISTRY = credentials('NPM_TOKEN')
       }
       
       steps {
-        sh "echo ${DOCKER_REGISTRY}"
-        sh "echo ${DOCKER_REGISTRY_USR}"
-        sh "echo ${DOCKER_REGISTRY_PSW}"
+        sh 'echo ${NPM_TOKEN}'
       }
     }
   }
