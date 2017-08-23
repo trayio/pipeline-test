@@ -19,7 +19,8 @@ pipeline {
       
       steps {
         script {
-          sh 'env'
+          docker.withRegistry('', '$DOCKER_REGISTRY') {
+          }
         }
       }
     }
