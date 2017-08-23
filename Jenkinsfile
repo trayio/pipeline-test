@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('build') {
       environment {
-        DOCKER_REGISTRY = credentials('NPM_TOKEN')
+        DOCKER_REGISTRY = credentials('8c59cc7c-077b-4115-a136-e5b64142345a')
       }
       
       steps {
