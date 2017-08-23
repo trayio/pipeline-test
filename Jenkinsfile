@@ -19,7 +19,7 @@ pipeline {
       
       steps {
         script {
-          docker.withRegistry('', '$DOCKER_REGISTRY') {
+          docker.withRegistry('', env.DOCKER_REGISTRY) {
           }
         }
       }
