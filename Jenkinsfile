@@ -1,3 +1,5 @@
+def pull
+
 pipeline {
   agent any
 
@@ -9,7 +11,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh "echo ${BRANCH_NAME}"
+        sh "env"
       }
     }
   }
