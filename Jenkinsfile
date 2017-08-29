@@ -10,19 +10,13 @@ pipeline {
     stage('barry') {
       when {
         expression {
-          AUTHOR = sh "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'"
+          AUTHOR = sh(returnStdout: true, script: "git log -1 | sed -ne 's/Author: \(.*\)<.*/\1/p'").trim()
           return AUTHOR == "Luka Furlan"
         }
       }
           
       steps {
-        sh "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'"
-      }
-    }
-
-    stage('test') {
-      steps {
-        sh "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'"
+        sh 'hello'
       }
     }
   }
