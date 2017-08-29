@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'echo ${BRANCH_NAME}'
+        sh "echo ${BRANCH_NAME}"
       }
     }
   }
