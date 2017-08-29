@@ -11,7 +11,7 @@ pipeline {
       steps {
         script {
           def x = "hello"
-          sh "echo ${hello}"
+          sh "echo ${x}"
         }
       }
     }
