@@ -20,5 +20,21 @@ pipeline {
         sh 'echo hello'
       }
     }
+
+    stage('two') {
+      steps {
+        sh 'echo two'
+      }
+    }
+    stage('three') {
+      steps {
+        sh 'echo three'
+      }
+    }
+    stage('four') {
+      steps {
+        sh 'echo four'
+      }
+    }
   }
 }
