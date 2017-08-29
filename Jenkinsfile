@@ -1,8 +1,3 @@
-@Library('Credentials')
-import io.tray.Credentials
-
-def x = Credentials.GitHub()
-
 pipeline {
   agent any
 
@@ -13,15 +8,8 @@ pipeline {
 
   stages {
     stage('build') {
-      environment {
-        DOCKER_REGISTRY = "HELLO"
-      }
-      
       steps {
-        script {
-          docker.withRegistry('', env.DOCKER_REGISTRY) {
-          }
-        }
+        sh 'echo ${BRANCH_NAME}'
       }
     }
   }
