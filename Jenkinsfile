@@ -8,9 +8,11 @@ pipeline {
 
   stages {
     stage('test') {
-      script {
-        def x = "hello"
-        sh "echo ${hello}"
+      steps {
+        script {
+          def x = "hello"
+          sh "echo ${hello}"
+        }
       }
     }
   }
