@@ -10,8 +10,8 @@ pipeline {
     stage('test') {
       steps {
         script {
-          def x = "hello"
-          sh 'echo ${x}'
+          def x = env.BRANCH_NAME.replace("m", "k")
+          sh "echo ${x}"
         }
       }
     }
