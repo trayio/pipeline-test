@@ -1,5 +1,3 @@
-def pull
-
 pipeline {
   agent any
 
@@ -9,13 +7,16 @@ pipeline {
   }
 
   stages {
-    stage('build') {
-      steps {
-        script {
-          pull = checkout scm
-
-          sh 'echo ${pull}'
+    stage('barry') {
+      when {
+        expression {
+          AUTHOR = sh script: "git log -1 | sed -ne 's/Author: \(.*\)<.*/\1/p'", returnStdout: true
+          return AUTHOR == "BarryJenkins"
         }
+      }
+          
+      steps {
+        sh 'hello'
       }
     }
   }
