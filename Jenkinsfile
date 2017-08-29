@@ -16,7 +16,13 @@ pipeline {
       }
           
       steps {
-        sh 'hello'
+        sh script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'", returnStdout: true
+      }
+    }
+
+    stage('test') {
+      steps {
+        sh script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'", returnStdout: true
       }
     }
   }
