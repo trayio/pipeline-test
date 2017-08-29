@@ -22,7 +22,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'", returnStdout: true
+        sh script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'"
       }
     }
   }
