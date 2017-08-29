@@ -10,13 +10,14 @@ pipeline {
     stage('barry') {
       when {
         expression {
-          AUTHOR = sh(returnStdout: true, script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'").trim()
-          return AUTHOR == "BarryJenkins"
+          // AUTHOR = sh(returnStdout: true, script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'").trim()
+          // return AUTHOR == "BarryJenkins"
+          return 0 != sh(script: "git log -1 | grep -q BarryJenkins", returnStatus: true)
         }
       }
           
       steps {
-        sh 'hello'
+        sh 'echo hello'
       }
     }
   }
