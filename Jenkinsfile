@@ -11,7 +11,7 @@ pipeline {
       when {
         expression {
           AUTHOR = sh(returnStdout: true, script: "git log -1 | sed -ne 's/Author: \\(.*\\)<.*/\\1/p'").trim()
-          return AUTHOR == "Luka Furlan"
+          return AUTHOR == "BarryJenkins"
         }
       }
           
