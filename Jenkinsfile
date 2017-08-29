@@ -11,7 +11,11 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh "env"
+        script {
+          pull = checkout scm
+
+          sh 'echo ${pull}'
+        }
       }
     }
   }
