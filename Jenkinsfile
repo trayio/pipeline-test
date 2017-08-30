@@ -11,9 +11,11 @@ pipeline {
       steps {
         script {
           docker.image('golang:latest').inside {
-            sh 'pwd'
-            sh 'ls'
-            sh 'env'
+            dir('src/github.com/trayio') {
+              sh 'pwd'
+              sh 'ls'
+              sh 'env'
+            }
           }
         }
       }
