@@ -8,16 +8,17 @@ pipeline {
 
   stages {
     stage('test') {
-      steps {
-        script {
-          ws('go/src/github.com/trayio/testing') {
-            docker.image('golang:latest').inside {
-              sh 'pwd'
-              sh 'ls'
-              sh 'env'
-            }
-          }
+      agent {
+        docker {
+          image 'golang:latest'
+          customWorkspace 'go/src/github.com/trayio/testing'
         }
+      }
+
+      steps {
+        sh 'pwd'
+        sh 'ls'
+        sh 'env'
       }
     }
   }
