@@ -13,6 +13,7 @@ pipeline {
           docker.image('golang:latest').inside {
             sh 'pwd'
             sh 'ls'
+            sh 'env'
           }
         }
       }
