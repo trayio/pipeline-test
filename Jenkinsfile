@@ -11,7 +11,7 @@ pipeline {
       agent {
         docker {
           image 'golang:latest'
-          customWorkspace 'go/src/github.com/trayio/testing'
+          customWorkspace '${WORKSPACE}/testing'
         }
       }
 
